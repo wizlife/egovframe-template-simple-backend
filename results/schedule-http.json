@@ -1,0 +1,58 @@
+[ {
+  "scenario" : "missing authenticated schedule",
+  "status" : "PASS",
+  "resultCode" : 404,
+  "http" : 200
+}, {
+  "scenario" : "missing anonymous schedule",
+  "status" : "PASS",
+  "resultCode" : 404,
+  "http" : 200
+}, {
+  "scenario" : "create and read schedule without attachment",
+  "status" : "PASS",
+  "id" : "SCHDUL_0000000000001"
+}, {
+  "scenario" : "update existing schedule and read persisted fields",
+  "status" : "PASS",
+  "id" : "SCHDUL_0000000000001"
+}, {
+  "scenario" : "create and read schedule with encrypted attachment metadata",
+  "status" : "PASS",
+  "id" : "SCHDUL_0000000000002"
+}, {
+  "scenario" : "download attachment with original filename and bytes",
+  "status" : "PASS",
+  "filename" : "agenda.png",
+  "http" : 200,
+  "bytes" : 68
+}, {
+  "scenario" : "anonymous normal schedule detail",
+  "status" : "PASS",
+  "id" : "SCHDUL_0000000000002",
+  "http" : 200
+}, {
+  "scenario" : "delete attached schedule then read not found and disabled attachment",
+  "status" : "PASS",
+  "id" : "SCHDUL_0000000000003",
+  "http" : 200,
+  "resultCode" : 404
+}, {
+  "scenario" : "delete unattached schedule then read not found",
+  "status" : "PASS",
+  "id" : "SCHDUL_0000000000004",
+  "http" : 200,
+  "resultCode" : 404
+}, {
+  "scenario" : "month list contains normal schedule and omits deleted schedule",
+  "status" : "PASS",
+  "http" : 200
+}, {
+  "scenario" : "daily list contains normal schedule and omits deleted schedule",
+  "status" : "PASS",
+  "http" : 200
+}, {
+  "scenario" : "week list contains normal schedule and omits deleted schedule",
+  "status" : "PASS",
+  "http" : 200
+} ]

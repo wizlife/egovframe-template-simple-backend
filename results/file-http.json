@@ -1,0 +1,95 @@
+[ {
+  "case" : "image-normal",
+  "passed" : true,
+  "bytes" : 68,
+  "bytes_equal" : true,
+  "http" : 200,
+  "mime" : "image/png"
+}, {
+  "case" : "image-missing-physical-file",
+  "passed" : true,
+  "response_bytes" : 0,
+  "http" : 404
+}, {
+  "case" : "image-directory-instead-of-file",
+  "passed" : true,
+  "response_bytes" : 0,
+  "http" : 404
+}, {
+  "case" : "image-missing-metadata",
+  "passed" : true,
+  "response_bytes" : 0,
+  "http" : 404
+}, {
+  "case" : "image-deleted-attachment",
+  "passed" : true,
+  "response_bytes" : 0,
+  "http" : 404
+}, {
+  "case" : "valid-then-oversized",
+  "passed" : true,
+  "new_file_rows" : 0,
+  "http" : 500,
+  "new_attachment_rows" : 0,
+  "new_board_rows" : 0,
+  "existing_file_hashes_unchanged" : true,
+  "new_physical_files" : 0
+}, {
+  "case" : "oversized-then-valid",
+  "passed" : true,
+  "new_file_rows" : 0,
+  "http" : 500,
+  "new_attachment_rows" : 0,
+  "new_board_rows" : 0,
+  "existing_file_hashes_unchanged" : true,
+  "new_physical_files" : 0
+}, {
+  "case" : "valid-then-disallowed-nonempty",
+  "passed" : true,
+  "new_file_rows" : 0,
+  "http" : 500,
+  "new_attachment_rows" : 0,
+  "new_board_rows" : 0,
+  "existing_file_hashes_unchanged" : true,
+  "new_physical_files" : 0
+}, {
+  "case" : "valid-then-disallowed-empty",
+  "passed" : true,
+  "new_file_rows" : 0,
+  "http" : 500,
+  "new_attachment_rows" : 0,
+  "new_board_rows" : 0,
+  "existing_file_hashes_unchanged" : true,
+  "new_physical_files" : 0
+}, {
+  "case" : "valid-then-extensionless-empty",
+  "passed" : true,
+  "new_file_rows" : 0,
+  "http" : 500,
+  "new_attachment_rows" : 0,
+  "new_board_rows" : 0,
+  "existing_file_hashes_unchanged" : true,
+  "new_physical_files" : 0
+}, {
+  "case" : "all-valid-order",
+  "passed" : true,
+  "file_sn" : [ "0", "1" ],
+  "names_normalized" : true,
+  "files" : 2,
+  "http" : 200,
+  "stored_bytes_equal" : true
+}, {
+  "case" : "size-exactly-at-limit",
+  "passed" : true,
+  "stored_bytes_equal" : true,
+  "bytes" : 5242880,
+  "http" : 200
+}, {
+  "case" : "unnamed-and-named-empty",
+  "passed" : true,
+  "unnamed_skipped" : true,
+  "bytes" : 0,
+  "scope" : "upload only; empty download fix is not in this branch",
+  "http" : 200,
+  "saved_files" : 1
+} ]
